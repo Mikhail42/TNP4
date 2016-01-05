@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Обработка текста</title>
+  	<meta http-equiv="Content-Type" content="application/xhtml; charset=utf-8" />
+	<h:outputStylesheet name="css/styles.css" />
+</h:head> 
+    <h:body>
+        <h1>Обработка текста</h1>	
+        <h:form> 
+            <h:panelGrid width="800px">
+                <h:outputText value="Текст для обработки:"></h:outputText>
+                <h:inputTextarea   id="textInput" 
+                                   value="#{textUpdateTaskView.textUpdateTask.stringToUpdate}" 
+                                   binding="#{textInput}"
+                                   label="Text" 
+                                   required="true" 
+                                   requiredMessage="Введите текст">
+                   <!--<f:validateLength minimum="1"/>-->
+                </h:inputTextarea> 
+                <h:message for="textInput" style="color:red" />
+                <br />         
+                <h:outputText value="Количество удаляемых с начала текста символов:"></h:outputText>
+                <h:inputText   id="amount" 
+                               value="#{textUpdateTaskView.textUpdateTask.amountToDelete}" 
+                               binding="#{amount}"
+                               label="Number" 
+                               required="true" 
+                               requiredMessage="Введите целое положительное число" >
+                    <f:validator validatorId="textTaskValidator"/>
+               </h:inputText>
+               <h:message for="amount" style="color:red"/>
+            </h:panelGrid>
+           <br />
+           <br />
+           <h:commandButton value="Отправить" action="#{textUpdateTaskView.postTextUpdateTask}"/>
+        </h:form>
+        <!-- </f:view>-->
+    </h:body>
+</html>

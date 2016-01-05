@@ -1,0 +1,52 @@
+/* 
+    Document   : markikokik
+    Created on : 18.11.2012, 14:06:05
+    Author     : markikokik
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+a:hover {
+    color: orange;
+}
+
+h1 {
+	color: orange;
+    text-align: center;
+    color: #CCFF33;
+    font-style: normal;
+}
+
+.indent {
+    margin: 20px;
+}
+
+.errmsg {    
+    color: red;
+    font-weight: bolder;
+    font-size: 75%;
+}
+
+.highlight {    
+    background-color: yellow;
+}
+
+.label {    
+    font-family: serif;
+}
+
+.code {    
+    font-family: monospace;
+    color: teal;
+}
+
+.homelink {    
+    position: absolute;
+    top: 0px;
+}
+
+.xmllink {    
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
